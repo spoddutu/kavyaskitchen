@@ -1,0 +1,42 @@
+<ion-view view-title="Kavyas Kitchen">
+  <ion-content>
+  	<div class="card">
+  		<div class="item item-divider">
+  			Our Lipsmacking Culinary Creations
+  			<span class="badge badge-assertive">{{home.dish.label}}</span>
+  		</div>
+  		<div class="item item-thumbnail-left item-text-wrap">
+  			<img ng-src="{{home.baseURL + home.dish.image}}" alt="Uthappizza" />
+  			<h2>{{home.dish.name}}
+  				<span class="badge">{{home.dish.price | currency}}</span>
+  			</h2>
+  			<p>
+  				{{home.dish.description}}
+  			</p>
+  		</div>
+  	</div>
+	<div class="card">
+	  <div class="item item-divider">
+	    This Month's Promotions
+	    <span class="badge badge-assertive">{{home.promotion.label}}</span>
+	  </div>
+	  <div class="item item-thumbnail-left item-text-wrap">
+	       <img ng-src="{{home.baseURL + home.promotion.image}}" alt="{{home.promotion.name}}">
+	        <h2>{{home.promotion.name}}
+	         <span class="badge">{{home.promotion.price | currency}}</span></h2>
+	        <p>{{home.promotion.description}}</p>
+	  </div>
+	</div>
+	<div class="card">
+	  <div class="item item-divider">
+	    Meet our Culinary Specialists
+	  </div>
+	  <div class="item item-thumbnail-left item-text-wrap">
+	       <img ng-src="{{home.baseURL + home.leader.image}}" alt="{{home.leader.name}}">
+	        <h2>{{home.leader.name}}</h2>
+	        <h4>{{home.leader.designation}}</h4>
+	        <p>{{home.leader.description}}</p>
+	  </div>
+	</div>
+    </ion-content>
+</ion-view>

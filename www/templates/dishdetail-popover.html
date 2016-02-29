@@ -1,0 +1,11 @@
+<ion-popover-view>
+	<ion-header-bar>
+		<h1 class="title">Options</h1>
+	</ion-header-bar>
+	<ion-content>
+		<ion-list>
+			<ion-item ng-click="detail.addToFav({{detail.dish.id}})">Add to Favourite</ion-item>
+			<ion-item ng-click="detail.showModal('commentModal')">Add Comments</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-popover-view>

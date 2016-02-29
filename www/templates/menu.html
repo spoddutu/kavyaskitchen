@@ -1,0 +1,35 @@
+<ion-view view-title="Menu">
+	<div class="tabs tabs-icon-top">
+	  <a class="tab-item" ng-class="{active:menu.isTab(1)}" ng-click="menu.select(1)">
+	    <i class="icon ion-ios-book"></i>
+	    Menu
+	  </a>
+	  <a class="tab-item"  ng-class="{active:menu.isTab(2)}" ng-click="menu.select(2)">
+	    <i class="icon ion-pizza"></i>
+	    Appetizers
+	  </a>
+	  <a class="tab-item"  ng-class="{active:menu.isTab(3)}" ng-click="menu.select(3)">
+	    <i class="icon ion-aperture"></i>
+	    Main Course
+	  </a>
+	  <a class="tab-item"  ng-class="{active:menu.isTab(4)}" ng-click="menu.select(4)">
+	    <i class="icon ion-icecream"></i>
+	    Desserts
+	  </a>
+	</div>
+	<ion-content>
+		<ion-list>
+		  <ion-item class="item-thumbnail-left"
+		  ng-repeat="dish in menu.dishes | filter:{category: menu.filterText}" href="#/app/menu/{{dish.id}}">
+		  	<img ng-src="{{menu.baseURL + dish.image}}" alt="{{dish.name}}" />
+		    <h2>{{dish.name}}
+		    	<b>{{dish.price | currency}}</b>
+		    	<span class="badge badge-assertive">{{dish.label}}</span>
+		    </h2>
+		    <p class="item-text-wrap">{{dish.description}}</p>
+		    <ion-option-button class="button-assertive icon ion-plus-circled" ng-click="menu.addToFav({{dish.id}})">
+		    </ion-option-button>
+		  </ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
