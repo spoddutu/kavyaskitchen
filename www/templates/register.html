@@ -1,0 +1,50 @@
+<ion-modal-view>
+	<ion-header-bar>
+		<h1 class="title">Register</h1>
+		<div class="buttons">
+			<button class="button button-clear" ng-click="restaurant.closeModal('registerModal')">Close</button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<form>
+			<div class="list">
+				<div class="row">
+					<div class="col col-75">
+						<img ng-src="{{restaurant.register.profileImage}}" width="100px" height="100px" alt="No profile pic"/>
+					</div>
+					<div class="col">
+						<button class="button button-icon icon ion-camera" ng-click="restaurant.takePicture()"></button>
+						<button class="button button-icon icon ion-images" ng-click="restaurant.browsePicture()"></button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<label class="item item-input">
+							<i class="ion-person"></i>
+							<input type="text" ng-model="restaurant.register.firstname" placeholder="First Name">
+						</label>
+						<label class="item item-input">
+							<i class="ion-person"></i>
+							<input type="text" ng-model="restaurant.register.middlename" placeholder="Middle Name">
+						</label>
+						<label class="item item-input">
+							<i class="ion-person"></i>
+							<input type="text" ng-model="restaurant.register.lastname" placeholder="Last Name">
+						</label>
+						<ion-radio ng-model="restaurant.register.gender" ng-value="'m'">M</ion-radio>
+						<ion-radio ng-model="restaurant.register.gender" ng-value="'f'">F</ion-radio>
+						<li class="item item-toggle">
+							Receive Promotions?
+							<label class="toggle toggle-assertive">
+								<input type="checkbox" ng-model="restaurant.register.promotions"/>
+								<div class="track">
+									<div class="handle"></div>
+								</div>
+							</label>
+						</li>
+					</div>
+				</div>
+			</div>
+		</form>
+	</ion-content>
+</ion-modal-view>
